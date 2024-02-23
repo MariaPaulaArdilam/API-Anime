@@ -5,4 +5,4 @@ Este es un proyecto full stack donde se consume una api de animes tiene una impl
 > [!IMPORTANT]  
 > hay una presentacion con mayor detalle.
 
-![Descripción de la imagen](/images/picture.jpg)
+![Descripción de la imagen](/IMG/Interfaz.png)
