@@ -65,8 +65,10 @@ export default function Search() {
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" value={titleName} onChange={handleInputChange} label="Anime Search" variant="outlined" />
-      <Button variant="contained" onClick={handleClick}>Search</Button>
+      <div style={{ display: 'flex', alignItems: 'center',  gap: '10px',justifyContent: "center"}}>
+  <TextField id="outlined-basic" value={titleName} onChange={handleInputChange} label="Anime Search" variant="outlined" />
+  <Button variant="contained" onClick={handleClick}>Search</Button>
+</div>
       
       <Row className="justify-content-center mt-4">
                 <Col xs={12} md={10}>
@@ -78,21 +80,21 @@ export default function Search() {
                                         {movies.slice(index, index + 5).map(movie => (
                                             <Col key={movie.id}>
                                                 
-                                                <Card>
-                                                <div className='card-image-conteiner'>
-                                                    <Card.Img variant="top" src={movie.image} alt={movie.title} className='card-image'/>
+                                                <Card style={{ height: '33em' }}>
+                                                <div className='card-image-conteiner' style={{ display: 'flex', flex: '1 1 auto',  flexDirection: 'row' }}>
+                                                    <Card.Img variant="top" src={movie.image} alt={movie.title} className='card-image'style={{ height: '20em', objectFit: 'cover' }}/>
                                                     </div>  
                                                     <Card.Body>
-                                                        <Card.Title>{movie.title}</Card.Title>
-                                                        <Card.Text>Score: {movie.score}</Card.Text>
+                                                        <Card.Title style={{ fontSize: '16px', minHeight: '1em' }}>{movie.title}</Card.Title>
+                                                        <Card.Text style={{ fontSize: '12px' }}>Score: {movie.score}</Card.Text>
                                                         {movie.score >= 8 && (
-                            <Card.Text className="text-success">Great, this is one of the best anime</Card.Text>
+                            <Card.Text style={{ fontSize: '14px' }}className="text-success">Great, this is one of the best anime</Card.Text>
                           )}
                           {movie.score >= 5 && movie.score < 8 && (
-                            <Card.Text className="text-warning">You may have fun</Card.Text>
+                            <Card.Text style={{ fontSize: '14px' }}className="text-warning">You may have fun</Card.Text>
                           )}
                           {movie.score < 5 && (
-                            <Card.Text className="text-danger">I don't recommend it</Card.Text>
+                            <Card.Text style={{ fontSize: '14px' }} className="text-danger">I don't recommend it</Card.Text>
                           )}
                                                     </Card.Body>
                                                 </Card>
